@@ -1,17 +1,17 @@
-import React from 'react'
-import CountryItem from './CountryItem'
+import React, { useContext } from 'react';
+import CountryItem from './CountryItem';
+import CountriesContext from '../context/countries/countriesContext';
 
 const Countries = () => {
+    const countriesContext  = useContext(CountriesContext);
 
-    // Temporary countries data
-    let data = [{name: 'Norway', population: 1000, capital: 'Oslo'},
-            {name: 'Canada', population: 2000, capital: 'Ottawa'}]
+    const { countries } =  countriesContext;
 
     return (
         <div>
             <h1>Countries 2</h1>
             <p>Countries here</p>
-            {data.map(country => (<CountryItem 
+            {countries.map(country => (<CountryItem 
                                     country={country} />))}
         </div>
     );
