@@ -14,11 +14,11 @@ const Countries = () => {
 
   return (
     <div>
-      <h1>Countries 2</h1>
-      <p>Countries here</p>
-      {countries.map((country) => (
-        <CountryItem country={country} />
-      ))}
+      <div style={{ display: 'flex', flexWrap: 'wrap'}}>
+        {countries.map((country) => (
+          <CountryItem country={country} />
+        ))}
+      </div>
     </div>
   );
 };
