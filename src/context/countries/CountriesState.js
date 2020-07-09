@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
 import CountriesContext from './countriesContext';
-import CountiresReducer from './countriesReducer';
+import CountriesReducer from './countriesReducer';
 import { GET_COUNTRIES } from '../types';
 
 const CountriesState = (props) => {
@@ -13,14 +13,23 @@ const CountriesState = (props) => {
     ],
   };
 
-  const [state, dispatch] = useReducer(CountiresReducer, initialState);
+  const [state, dispatch] = useReducer(CountriesReducer, initialState);
 
   // Get all countries
+  const getAllCountries = async () => {
+    const res = await axios.get('https://restcountries.eu/rest/v2/all');
+
+    dispatch({
+      type: GET_COUNTRIES,
+      payload: res.data,
+    });
+  };
 
   return (
     <CountriesContext.Provider
       value={{
         countries: state.countries,
+        getAllCountries
       }}
     >
       {props.children}
