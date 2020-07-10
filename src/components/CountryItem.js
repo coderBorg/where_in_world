@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const CountryItem = ({
   country: { name, capital, population, flag, region },
@@ -10,6 +11,9 @@ export const CountryItem = ({
       <p>Population: {population}</p>
       <p>Region: {region}</p>
       <p>Capital: {capital}</p>
+      <Link to={`/CountryDetail`} className="btn btn-dark btn-sm my-1">
+          More
+        </Link>
     </div>
   );
 };
