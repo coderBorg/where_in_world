@@ -8,9 +8,8 @@ export default (state, action) => {
         countries: action.payload,
       };
     case GET_COUNTRY_DETAIL:
-      return {
-        ...state,
-        countryDetail: action.payload,
-      };
+      let tempState = state;
+      tempState.countryDetail.borders = action.payload.borders;
+      return tempState;
   }
 };

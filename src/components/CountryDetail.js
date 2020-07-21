@@ -11,9 +11,12 @@ export const CountryDetail = ({ match }) => {
     // eslint-disable-next-line
   }, []);
 
+  // let borders0 = countryDetail.borders[0];
   let borders = countryDetail.borders;
   let bordersType = typeof(countryDetail.borders);
   // let borders2 = countryDetail.borders.map((c) => c);
+  // let borders2 = Object.values(countryDetail.borders).map((c) => c);
+  
 
   return (
     <div>
