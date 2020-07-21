@@ -11,6 +11,8 @@ export default (state, action) => {
       let tempState = { ...state };
       tempState.countryDetail = action.payload;
       // tempState.countryDetail.borders = action.payload.borders;
+      // tempState.countryDetail.borders = action.payload.borders.map((b) => {return b;});
+      tempState.countryDetail.borders = action.payload.borders.slice();
       return tempState;
   }
 };
