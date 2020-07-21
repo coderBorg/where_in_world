@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL } from '../types';
+import { GET_COUNTRIES, GET_COUNTRY_DETAIL, GET_COUNTRY_DETAIL_BORDERS } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -11,6 +11,11 @@ export default (state, action) => {
       return {
         ...state,
         countryDetail: action.payload,
+      };
+    case GET_COUNTRY_DETAIL_BORDERS:
+      return {
+        ...state,
+        countryDetailBorders: action.payload,
       };
   }
 };

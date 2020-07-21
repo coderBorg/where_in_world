@@ -4,7 +4,7 @@ import CountriesContext from '../context/countries/countriesContext';
 export const CountryDetail = ({ match }) => {
   const countriesContext = useContext(CountriesContext);
 
-  const { countryDetail, getCountryDetail } = countriesContext;
+  const { countryDetail, countryDetailBorders, getCountryDetail } = countriesContext;
 
   useEffect(() => {
     getCountryDetail(match.params.name);
@@ -18,6 +18,12 @@ export const CountryDetail = ({ match }) => {
       <p>Native Name: {countryDetail.nativeName}</p>
       <p>Population: {countryDetail.population}</p>
       <p>Currencies:</p>
+      <p>Borders:</p>
+      <div>
+        {countryDetailBorders.map((border) => (
+          <p>{border}</p>
+        ))}
+      </div>
       
     </div>
   );

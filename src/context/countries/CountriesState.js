@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import CountriesContext from './countriesContext';
 import CountriesReducer from './countriesReducer';
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL } from '../types';
+import { GET_COUNTRIES, GET_COUNTRY_DETAIL, GET_COUNTRY_DETAIL_BORDERS } from '../types';
 
 const CountriesState = (props) => {
   const initialState = {
@@ -11,7 +11,8 @@ const CountriesState = (props) => {
       { name: 'Norway', population: 11000, capital: 'Oslo' },
       { name: 'Canada', population: 22000, capital: 'Ottawa' },
     ],
-    countryDetail: {}
+    countryDetail: {},
+    countryDetailBorders: []
   };
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
@@ -37,6 +38,13 @@ const CountriesState = (props) => {
       type: GET_COUNTRY_DETAIL,
       payload: res.data[0],
     });
+
+    dispatch({
+      type: GET_COUNTRY_DETAIL_BORDERS,
+      payload: res.data[0].borders,
+    });
+
+
   };
 
   return (
@@ -44,6 +52,7 @@ const CountriesState = (props) => {
       value={{
         countries: state.countries,
         countryDetail: state.countryDetail,
+        countryDetailBorders: state.countryDetailBorders,
         getAllCountries,
         getCountryDetail
       }}
