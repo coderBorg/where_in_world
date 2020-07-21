@@ -31,7 +31,15 @@ const CountriesState = (props) => {
     const res = await axios.get(`https://restcountries.eu/rest/v2/name/${name}`);
 
     console.log("country detail data:");
+    console.log(typeof(res.data));
     console.log(res.data);
+    console.log(typeof([1,3,4]));
+    console.log([1,3,4] instanceof Array);
+    console.log(res.data[0].borders instanceof Array);
+    console.log(res.data[0].borders[0]);
+    console.log(res.data[0].borders[1]);
+    console.log(res.data[0].borders.length);
+
 
     dispatch({
       type: GET_COUNTRY_DETAIL,

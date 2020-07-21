@@ -11,6 +11,10 @@ export const CountryDetail = ({ match }) => {
     // eslint-disable-next-line
   }, []);
 
+  let borders = countryDetail.borders;
+  let bordersType = typeof(countryDetail.borders);
+  // let borders2 = countryDetail.borders.map((c) => c);
+
   return (
     <div>
       <p>Country detail here</p>
@@ -18,7 +22,13 @@ export const CountryDetail = ({ match }) => {
       <p>Native Name: {countryDetail.nativeName}</p>
       <p>Population: {countryDetail.population}</p>
       <p>Currencies:</p>
-      
+      <p>`${countryDetail.borders}`</p>
+      <p>{typeof(countryDetail.borders)}</p>
+      <p>{countryDetail.borders instanceof Array ? "array" : "not array"}</p>
+      <p>{Array.isArray(countryDetail.borders)}</p>
+      <p>borders: {borders}</p>
+      <p>typeof borders: {bordersType}</p>
+      <p>What</p>
     </div>
   );
 };
