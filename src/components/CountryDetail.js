@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import CountriesContext from '../context/countries/countriesContext';
 import BorderCountryItem from './BorderCountryItem';
 
@@ -15,6 +17,7 @@ export const CountryDetail = ({ match }) => {
   return (
     <div>
       <p>Country detail here</p>
+      <Link to={'/'}>Back</Link>
       <p>{match.params.name}</p>
       <p>Native Name: {countryDetail.nativeName}</p>
       <p>Population: {countryDetail.population}</p>
