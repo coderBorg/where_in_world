@@ -2,7 +2,11 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import CountriesContext from './countriesContext';
 import CountriesReducer from './countriesReducer';
-import { GET_COUNTRIES, GET_COUNTRY_DETAIL, GET_COUNTRY_DETAIL_BORDERS } from '../types';
+import {
+  GET_COUNTRIES,
+  GET_COUNTRY_DETAIL,
+  GET_COUNTRY_DETAIL_BORDERS,
+} from '../types';
 
 const CountriesState = (props) => {
   const initialState = {
@@ -12,7 +16,7 @@ const CountriesState = (props) => {
       { name: 'Canada', population: 22000, capital: 'Ottawa' },
     ],
     countryDetail: {},
-    countryDetailBorders: []
+    countryDetailBorders: [],
   };
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
@@ -29,9 +33,11 @@ const CountriesState = (props) => {
 
   // Get country detail
   const getCountryDetail = async (name) => {
-    const res = await axios.get(`https://restcountries.eu/rest/v2/name/${name}`);
+    const res = await axios.get(
+      `https://restcountries.eu/rest/v2/name/${name}`
+    );
 
-    console.log("country detail data:");
+    console.log('country detail data:');
     console.log(res.data);
 
     dispatch({
@@ -39,41 +45,23 @@ const CountriesState = (props) => {
       payload: res.data[0],
     });
 
-    // let borderNames = res.data[0].borders.map((b) => {await getCountryNameFrCode(b)});
-
-    console.log("borders:", res.data[0].borders);
-
     let borderNames = [];
-    let borderCode = '';
-    for (borderCode of res.data[0].borders){
-      console.log('bordercode: ', borderCode);
-      let borderName = await getCountryNameFrCode(borderCode);
-      borderNames.push(borderName);
+    for (const borderCode of res.data[0].borders) {
+      borderNames.push(await getCountryNameFrCode(borderCode));
     }
-    // res.data[0].borders.forEach(borderNames.push())
-
-    console.log("borderNames: ", borderNames);
 
     dispatch({
       type: GET_COUNTRY_DETAIL_BORDERS,
-      payload: borderNames
+      payload: borderNames,
     });
-
-
   };
 
   const getCountryNameFrCode = async (code) => {
-
-    console.log("code: ", code);
-
-    const res = await axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`);
-
-    console.log("res.data: ", res.data);
-    console.log("name: ", res.data.name);
-
+    const res = await axios.get(
+      `https://restcountries.eu/rest/v2/alpha/${code}`
+    );
     return res.data.name;
-
-  }
+  };
 
   return (
     <CountriesContext.Provider
@@ -82,7 +70,7 @@ const CountriesState = (props) => {
         countryDetail: state.countryDetail,
         countryDetailBorders: state.countryDetailBorders,
         getAllCountries,
-        getCountryDetail
+        getCountryDetail,
       }}
     >
       {props.children}
