@@ -39,17 +39,19 @@ const CountriesState = (props) => {
       payload: res.data[0],
     });
 
-    // let borderNames = res.data[0].borders.map((b) => {await getCountryNameFrCode(b)});
+    let borderNames = res.data[0].borders.map(await async (b) => { return await getCountryNameFrCode(b)});
 
     console.log("borders:", res.data[0].borders);
 
-    let borderNames = [];
-    let borderCode = '';
-    for (borderCode of res.data[0].borders){
-      console.log('bordercode: ', borderCode);
-      let borderName = await getCountryNameFrCode(borderCode);
-      borderNames.push(borderName);
-    }
+    // let borderNames = [];
+    // let borderCode = '';
+    // for (borderCode of res.data[0].borders){
+    //   console.log('bordercode: ', borderCode);
+    //   let borderName = await getCountryNameFrCode(borderCode);
+    //   borderNames.push(borderName);
+    // }
+
+
     // res.data[0].borders.forEach(borderNames.push())
 
     console.log("borderNames: ", borderNames);
