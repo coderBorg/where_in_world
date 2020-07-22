@@ -39,13 +39,41 @@ const CountriesState = (props) => {
       payload: res.data[0],
     });
 
+    // let borderNames = res.data[0].borders.map((b) => {await getCountryNameFrCode(b)});
+
+    console.log("borders:", res.data[0].borders);
+
+    let borderNames = [];
+    let borderCode = '';
+    for (borderCode of res.data[0].borders){
+      console.log('bordercode: ', borderCode);
+      let borderName = await getCountryNameFrCode(borderCode);
+      borderNames.push(borderName);
+    }
+    // res.data[0].borders.forEach(borderNames.push())
+
+    console.log("borderNames: ", borderNames);
+
     dispatch({
       type: GET_COUNTRY_DETAIL_BORDERS,
-      payload: res.data[0].borders,
+      payload: borderNames
     });
 
 
   };
+
+  const getCountryNameFrCode = async (code) => {
+
+    console.log("code: ", code);
+
+    const res = await axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`);
+
+    console.log("res.data: ", res.data);
+    console.log("name: ", res.data.name);
+
+    return res.data.name;
+
+  }
 
   return (
     <CountriesContext.Provider
