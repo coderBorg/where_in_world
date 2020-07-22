@@ -8,9 +8,9 @@ export const CountryDetail = ({ match }) => {
   const { countryDetail, countryDetailBorders, getCountryDetail } = countriesContext;
 
   useEffect(() => {
-    // getCountryDetail(match.params.name);
+    getCountryDetail(match.params.name);
     // eslint-disable-next-line
-  }, []);
+  }, [countryDetail]);
 
   return (
     <div>
