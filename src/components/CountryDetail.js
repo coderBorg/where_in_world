@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import CountriesContext from '../context/countries/countriesContext';
+import BorderCountryItem from './BorderCountryItem';
 
 export const CountryDetail = ({ match }) => {
   const countriesContext = useContext(CountriesContext);
@@ -19,9 +20,9 @@ export const CountryDetail = ({ match }) => {
       <p>Population: {countryDetail.population}</p>
       <p>Currencies:</p>
       <p>Borders:</p>
-      <div>
-        {countryDetailBorders.map((border) => (
-          <p>{border}</p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row'}}>
+        {countryDetailBorders.map((name) => (
+          <BorderCountryItem name={name}/>
         ))}
       </div>
       
