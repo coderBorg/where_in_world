@@ -17,6 +17,7 @@ const CountriesState = (props) => {
     ],
     countryDetail: {},
     countryDetailBorders: [],
+    searchText: ''
   };
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
@@ -69,8 +70,9 @@ const CountriesState = (props) => {
         countries: state.countries,
         countryDetail: state.countryDetail,
         countryDetailBorders: state.countryDetailBorders,
+        searchText: state.searchText,
         getAllCountries,
-        getCountryDetail,
+        getCountryDetail
       }}
     >
       {props.children}

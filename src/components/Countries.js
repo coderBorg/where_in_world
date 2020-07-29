@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import CountryItem from './CountryItem';
+import Search from './Search';
 import CountriesContext from '../context/countries/countriesContext';
 
 const Countries = () => {
@@ -14,6 +15,7 @@ const Countries = () => {
 
   return (
     <div>
+      <Search />
       <div style={{ display: 'flex', flexWrap: 'wrap'}}>
         {countries.map((country) => (
           <CountryItem country={country} />
