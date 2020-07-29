@@ -19,12 +19,13 @@ const Search = () => {
   return (
     <div>
       <p>para</p>
+      <p>Search text: {searchText}</p>
       <form>
         <input
           type="text"
           name="searchText"
           placeholder="Search for a country..."
-          value={searchText}
+          defaultValue={searchText}
           onChange={onChange}
         />
       </form>
