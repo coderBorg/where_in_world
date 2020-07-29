@@ -65,11 +65,19 @@ const CountriesState = (props) => {
     return res.data.name;
   };
 
-  const updateSearchText = (text) => {
+  const updateSearchText = async (text) => {
     dispatch({
       type: UPDATE_SEARCH_TEXT,
       payload: text,
     });
+
+    const res = await axios.get(`https://restcountries.eu/rest/v2/name/${text}`);
+
+    dispatch({
+      type: GET_COUNTRIES,
+      payload: res.data,
+    });
+
   };
 
   return (
