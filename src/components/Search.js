@@ -7,13 +7,11 @@ const Search = () => {
   const [state, dispatch] = useReducer(CountriesReducer);
 
   const countriesContext = useContext(CountriesContext);
-  const { searchText } = countriesContext;
+    
+  const { searchText, updateSearchText } = countriesContext;
 
   const onChange = (e) => {
-    dispatch({
-      type: UPDATE_SEARCH_TEXT,
-      payload: e.target.value,
-    });
+    updateSearchText(e.target.value);
   };
 
   return (

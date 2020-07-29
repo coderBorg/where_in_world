@@ -6,6 +6,7 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
+  UPDATE_SEARCH_TEXT
 } from '../types';
 
 const CountriesState = (props) => {
@@ -64,6 +65,13 @@ const CountriesState = (props) => {
     return res.data.name;
   };
 
+  const updateSearchText = (text) => {
+    dispatch({
+      type: UPDATE_SEARCH_TEXT,
+      payload: text,
+    });
+  };
+
   return (
     <CountriesContext.Provider
       value={{
@@ -72,7 +80,8 @@ const CountriesState = (props) => {
         countryDetailBorders: state.countryDetailBorders,
         searchText: state.searchText,
         getAllCountries,
-        getCountryDetail
+        getCountryDetail,
+        updateSearchText
       }}
     >
       {props.children}
