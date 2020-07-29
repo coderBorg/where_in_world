@@ -12,7 +12,7 @@ export const CountryDetail = ({ match }) => {
   useEffect(() => {
     getCountryDetail(match.params.name);
     // eslint-disable-next-line
-  }, [countryDetail, countryDetailBorders]);
+  }, [countryDetail]);
 
   return (
     <div>
