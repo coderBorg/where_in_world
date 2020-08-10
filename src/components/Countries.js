@@ -12,7 +12,7 @@ const Countries = () => {
   useEffect(() => {
     getAllCountries();
     // eslint-disable-next-line
-  }, [countries, filteredCountries]);
+  }, []);
 
   return (
     <div>

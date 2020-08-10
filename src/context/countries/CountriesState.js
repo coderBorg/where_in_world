@@ -84,11 +84,13 @@ const CountriesState = (props) => {
       payload: res.data,
     });
 
+    console.log(`len of data from API: ${res.data.length}`)
+
     console.log("in updateSearchText");
     console.log(`searchtext: ${text}`);
-    console.log("filter value:");
-    console.log(state.filterValue);
-    updateFilteredCountries(state.filterValue);
+    // console.log("filter value:");
+    // console.log(state.filterValue);
+    // updateFilteredCountries(state.filterValue);
 
   };
 

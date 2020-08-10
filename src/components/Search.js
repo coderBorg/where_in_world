@@ -8,10 +8,12 @@ const Search = () => {
 
   const countriesContext = useContext(CountriesContext);
     
-  const { searchText, updateSearchText } = countriesContext;
+  const { searchText, filterValue, updateSearchText, updateFilteredCountries } = countriesContext;
 
   const onChange = (e) => {
     updateSearchText(e.target.value);
+
+    updateFilteredCountries(filterValue);
   };
 
   return (
