@@ -101,21 +101,21 @@ const CountriesState = (props) => {
     });
   };
 
-  const updateFilteredCountries = (val) => {
+  const updateFilteredCountries = (countries, filtVal) => {
     console.log('in updateFilteredCountries');
     console.log('val:');
-    console.log(val);
-    if (val === '') {
+    console.log(filtVal);
+    if (filtVal === '') {
       dispatch({
         type: UPDATE_FILTERED_COUNTRIES,
-        payload: state.countries,
+        payload: countries,
       });
     } else {
       let filtCountries = [];
-      for (const country of state.countries) {
+      for (const country of countries) {
         // console.log(country.name);
         // console.log(country.region);
-        if (val.toUpperCase() === country.region.toUpperCase()) {
+        if (filtVal.toUpperCase() === country.region.toUpperCase()) {
           filtCountries.push(country);
         }
       }

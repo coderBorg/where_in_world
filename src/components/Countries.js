@@ -7,10 +7,11 @@ import CountriesContext from '../context/countries/countriesContext';
 const Countries = () => {
   const countriesContext = useContext(CountriesContext);
 
-  const { countries, filteredCountries, getAllCountries } = countriesContext;
+  const { countries, filterValue, filteredCountries, getAllCountries, updateFilteredCountries } = countriesContext;
 
   useEffect(() => {
     getAllCountries();
+    updateFilteredCountries(countries, filterValue);
     // eslint-disable-next-line
   }, []);
 
