@@ -83,6 +83,12 @@ const CountriesState = (props) => {
       type: GET_COUNTRIES,
       payload: res.data,
     });
+
+    console.log("in updateSearchText");
+    console.log("filter value:");
+    console.log(state.filterValue);
+    updateFilteredCountries(state.filterValue);
+
   };
 
   const updateFilterValue = (val) => {
@@ -102,8 +108,8 @@ const CountriesState = (props) => {
     } else {
       let filtCountries = [];
       for (const country of state.countries) {
-        console.log(country.name);
-        console.log(country.region);
+        // console.log(country.name);
+        // console.log(country.region);
         if (val.toUpperCase() === country.region.toUpperCase()) {
           filtCountries.push(country);
         }
