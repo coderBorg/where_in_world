@@ -2,7 +2,8 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
-  UPDATE_SEARCH_TEXT
+  UPDATE_SEARCH_TEXT,
+  UPDATE_FILTER_VALUE,
 } from '../types';
 
 export default (state, action) => {
@@ -26,6 +27,11 @@ export default (state, action) => {
       return {
         ...state,
         searchText: action.payload,
+      };
+    case UPDATE_FILTER_VALUE:
+      return {
+        ...state,
+        filterValue: action.payload,
       };
   }
 };

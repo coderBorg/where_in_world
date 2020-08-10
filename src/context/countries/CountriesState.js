@@ -6,7 +6,8 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
-  UPDATE_SEARCH_TEXT
+  UPDATE_SEARCH_TEXT,
+  UPDATE_FILTER_VALUE
 } from '../types';
 
 const CountriesState = (props) => {
@@ -18,7 +19,8 @@ const CountriesState = (props) => {
     ],
     countryDetail: {},
     countryDetailBorders: [],
-    searchText: ''
+    searchText: '',
+    filterValue: ''
   };
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
@@ -80,6 +82,13 @@ const CountriesState = (props) => {
 
   };
 
+  const updateFilterValue = (val) => {
+    dispatch({
+      type: UPDATE_FILTER_VALUE,
+      payload: val,
+    });
+  }
+
   return (
     <CountriesContext.Provider
       value={{
@@ -87,9 +96,11 @@ const CountriesState = (props) => {
         countryDetail: state.countryDetail,
         countryDetailBorders: state.countryDetailBorders,
         searchText: state.searchText,
+        filterValue: state.filterValue,
         getAllCountries,
         getCountryDetail,
-        updateSearchText
+        updateSearchText,
+        updateFilterValue
       }}
     >
       {props.children}
