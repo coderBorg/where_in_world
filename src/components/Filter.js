@@ -8,11 +8,12 @@ const Filter = () => {
 
   const countriesContext = useContext(CountriesContext);
 
-  const { updateFilterValue } = countriesContext;
+  const { updateFilterValue, updateFilteredCountries } = countriesContext;
 
   const onChange = (e) => {
     console.log(e.target.value);
     updateFilterValue(e.target.value);
+    updateFilteredCountries(e.target.value);
   };
 
   return (

@@ -7,7 +7,8 @@ import {
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
   UPDATE_SEARCH_TEXT,
-  UPDATE_FILTER_VALUE
+  UPDATE_FILTER_VALUE,
+  UPDATE_FILTERED_COUNTRIES,
 } from '../types';
 
 const CountriesState = (props) => {
@@ -20,7 +21,8 @@ const CountriesState = (props) => {
     countryDetail: {},
     countryDetailBorders: [],
     searchText: '',
-    filterValue: ''
+    filterValue: '',
+    filteredCountries: [],
   };
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
@@ -73,13 +75,14 @@ const CountriesState = (props) => {
       payload: text,
     });
 
-    const res = await axios.get(`https://restcountries.eu/rest/v2/name/${text}`);
+    const res = await axios.get(
+      `https://restcountries.eu/rest/v2/name/${text}`
+    );
 
     dispatch({
       type: GET_COUNTRIES,
       payload: res.data,
     });
-
   };
 
   const updateFilterValue = (val) => {
@@ -87,7 +90,30 @@ const CountriesState = (props) => {
       type: UPDATE_FILTER_VALUE,
       payload: val,
     });
-  }
+  };
+
+  const updateFilteredCountries = (val) => {
+    console.log('in updateFilteredCountries');
+    if (val === '') {
+      dispatch({
+        type: UPDATE_FILTERED_COUNTRIES,
+        payload: state.countries,
+      });
+    } else {
+      let filtCountries = [];
+      for (const country of state.countries) {
+        console.log(country.name);
+        console.log(country.region);
+        if (val.toUpperCase() === country.region.toUpperCase()) {
+          filtCountries.push(country);
+        }
+      }
+      dispatch({
+        type: UPDATE_FILTERED_COUNTRIES,
+        payload: filtCountries,
+      });
+    }
+  };
 
   return (
     <CountriesContext.Provider
@@ -97,10 +123,12 @@ const CountriesState = (props) => {
         countryDetailBorders: state.countryDetailBorders,
         searchText: state.searchText,
         filterValue: state.filterValue,
+        filteredCountries: state.filteredCountries,
         getAllCountries,
         getCountryDetail,
         updateSearchText,
-        updateFilterValue
+        updateFilterValue,
+        updateFilteredCountries,
       }}
     >
       {props.children}
