@@ -85,6 +85,7 @@ const CountriesState = (props) => {
     });
 
     console.log("in updateSearchText");
+    console.log(`searchtext: ${text}`);
     console.log("filter value:");
     console.log(state.filterValue);
     updateFilteredCountries(state.filterValue);
@@ -100,6 +101,8 @@ const CountriesState = (props) => {
 
   const updateFilteredCountries = (val) => {
     console.log('in updateFilteredCountries');
+    console.log('val:');
+    console.log(val);
     if (val === '') {
       dispatch({
         type: UPDATE_FILTERED_COUNTRIES,
