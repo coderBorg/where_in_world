@@ -10,11 +10,12 @@ const Search = () => {
     
   const { countries, searchText, filterValue, updateSearchText, updateFilteredCountries } = countriesContext;
 
-  const onChange = (e) => {
-    console.log("in onChange for search");
-    updateSearchText(e.target.value);
+  const onChange = async (e) => {
+    console.log(`in onChange for search, len of countries: ${countries.length}`);
+    await updateSearchText(e.target.value);
+    console.log(`in onChange for search, len of countries after updateSearchText: ${countries.length}`);
 
-    updateFilteredCountries(countries, filterValue);
+    await updateFilteredCountries(countries, filterValue);
   };
 
   return (

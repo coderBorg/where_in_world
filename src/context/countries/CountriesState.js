@@ -106,6 +106,7 @@ const CountriesState = (props) => {
     console.log('val:');
     console.log(filtVal);
     if (filtVal === '') {
+      console.log('in branch where filtval is empty string')
       dispatch({
         type: UPDATE_FILTERED_COUNTRIES,
         payload: countries,
