@@ -75,23 +75,40 @@ const CountriesState = (props) => {
       payload: text,
     });
 
-    const res = await axios.get(
-      `https://restcountries.eu/rest/v2/name/${text}`
-    );
+    // const res = await axios.get(
+    //   `https://restcountries.eu/rest/v2/name/${text}`
+    // );
+
+    // dispatch({
+    //   type: GET_COUNTRIES,
+    //   payload: res.data,
+    // });
+
+    // console.log(`len of data from API: ${res.data.length}`)
+
+    console.log('in updateSearchText');
+    console.log(`searchtext: ${text}`);
+    // console.log("filter value:");
+    // console.log(state.filterValue);
+    // updateFilteredCountries(state.filterValue);
+  };
+
+  const searchAndFilter = async (searchText, filterValue) => {
+    let res;
+    if (searchText === '') {
+      res = await axios.get('https://restcountries.eu/rest/v2/all');
+    } else {
+      res = await axios.get(
+        `https://restcountries.eu/rest/v2/name/${searchText}`
+      );
+    }
 
     dispatch({
       type: GET_COUNTRIES,
       payload: res.data,
     });
 
-    console.log(`len of data from API: ${res.data.length}`)
-
-    console.log("in updateSearchText");
-    console.log(`searchtext: ${text}`);
-    // console.log("filter value:");
-    // console.log(state.filterValue);
-    // updateFilteredCountries(state.filterValue);
-
+    updateFilteredCountries(res.data, filterValue);
   };
 
   const updateFilterValue = (val) => {
@@ -106,7 +123,7 @@ const CountriesState = (props) => {
     console.log('val:');
     console.log(filtVal);
     if (filtVal === '') {
-      console.log('in branch where filtval is empty string')
+      console.log('in branch where filtval is empty string');
       dispatch({
         type: UPDATE_FILTERED_COUNTRIES,
         payload: countries,
@@ -136,6 +153,7 @@ const CountriesState = (props) => {
         searchText: state.searchText,
         filterValue: state.filterValue,
         filteredCountries: state.filteredCountries,
+        searchAndFilter,
         getAllCountries,
         getCountryDetail,
         updateSearchText,
