@@ -38,5 +38,11 @@
 }
 
 .dark {
-  color: cyan;
+  color: white;
+  background-color: gray;
+}
+
+.light {
+  color: black;
+  background-color: white;
 }

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import CountryItem from './CountryItem';
 import Search from './Search';
 import Filter from './Filter';
+import DarkMode from './DarkMode';
 import CountriesContext from '../context/countries/countriesContext';
 
 const Countries = () => {
@@ -9,6 +10,7 @@ const Countries = () => {
 
   const {
     searchText,
+    darkMode,
     countries,
     filterValue,
     filteredCountries,
@@ -28,9 +30,10 @@ const Countries = () => {
     <div>
       <Search />
       <Filter />
+      <DarkMode />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {filteredCountries.map((country) => (
-          <CountryItem country={country} darkMode={false} />
+          <CountryItem country={country} darkMode={darkMode} />
         ))}
       </div>
     </div>

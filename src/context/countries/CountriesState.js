@@ -9,6 +9,7 @@ import {
   UPDATE_SEARCH_TEXT,
   UPDATE_FILTER_VALUE,
   UPDATE_FILTERED_COUNTRIES,
+  SET_DARK_MODE,
 } from '../types';
 
 const CountriesState = (props) => {
@@ -23,6 +24,7 @@ const CountriesState = (props) => {
     searchText: '',
     filterValue: '',
     filteredCountries: [],
+    darkMode: false,
   };
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
@@ -144,6 +146,14 @@ const CountriesState = (props) => {
     }
   };
 
+  const setDarkMode = (mode) => {
+    dispatch({
+      type: SET_DARK_MODE,
+      payload: mode,
+    });
+  }
+  
+
   return (
     <CountriesContext.Provider
       value={{
@@ -153,12 +163,14 @@ const CountriesState = (props) => {
         searchText: state.searchText,
         filterValue: state.filterValue,
         filteredCountries: state.filteredCountries,
+        darkMode: state.darkMode,
         searchAndFilter,
         getAllCountries,
         getCountryDetail,
         updateSearchText,
         updateFilterValue,
         updateFilteredCountries,
+        setDarkMode,
       }}
     >
       {props.children}

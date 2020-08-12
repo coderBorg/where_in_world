@@ -5,6 +5,7 @@ import {
   UPDATE_SEARCH_TEXT,
   UPDATE_FILTER_VALUE,
   UPDATE_FILTERED_COUNTRIES,
+  SET_DARK_MODE,
 } from '../types';
 
 export default (state, action) => {
@@ -38,6 +39,11 @@ export default (state, action) => {
       return {
         ...state,
         filteredCountries: action.payload,
+      };
+    case SET_DARK_MODE:
+      return {
+        ...state,
+        darkMode: action.payload,
       };
   }
 };
