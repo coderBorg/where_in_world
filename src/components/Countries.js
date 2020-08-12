@@ -30,7 +30,7 @@ const Countries = () => {
       <Filter />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {filteredCountries.map((country) => (
-          <CountryItem country={country} />
+          <CountryItem country={country} darkMode={false} />
         ))}
       </div>
     </div>
