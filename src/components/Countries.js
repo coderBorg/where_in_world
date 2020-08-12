@@ -26,12 +26,14 @@ const Countries = () => {
     // eslint-disable-next-line
   }, []);
 
+  let cssClass = darkMode ? 'dark' : 'light';
+
   return (
     <div>
       <Search />
       <Filter />
       <DarkMode />
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }} className={cssClass}>
         {filteredCountries.map((country) => (
           <CountryItem country={country} darkMode={darkMode} />
         ))}
