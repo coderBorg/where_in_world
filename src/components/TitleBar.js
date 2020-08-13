@@ -15,7 +15,7 @@ const TitleBar = () => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          padding: '20px 0'
+          padding: '20px 50px'
         }}
         className={cssClass}
       >
