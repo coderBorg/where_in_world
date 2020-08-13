@@ -7,15 +7,22 @@ import BorderCountryItem from './BorderCountryItem';
 export const CountryDetail = ({ match }) => {
   const countriesContext = useContext(CountriesContext);
 
-  const { countryDetail, countryDetailBorders, getCountryDetail } = countriesContext;
+  const {
+    darkMode,
+    countryDetail,
+    countryDetailBorders,
+    getCountryDetail,
+  } = countriesContext;
 
   useEffect(() => {
     getCountryDetail(match.params.name);
     // eslint-disable-next-line
   }, [countryDetail]);
 
+  let cssClass = darkMode ? 'dark' : 'light';
+
   return (
-    <div>
+    <div className={cssClass}>
       <p>Country detail here</p>
       <Link to={'/'}>Back</Link>
       <p>{match.params.name}</p>
@@ -23,12 +30,11 @@ export const CountryDetail = ({ match }) => {
       <p>Population: {countryDetail.population}</p>
       <p>Currencies:</p>
       <p>Borders:</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row'}}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
         {countryDetailBorders.map((name) => (
-          <BorderCountryItem name={name}/>
+          <BorderCountryItem name={name} />
         ))}
       </div>
-      
     </div>
   );
 };

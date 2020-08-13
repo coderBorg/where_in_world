@@ -12,7 +12,7 @@ const DarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  return <div onClick={onClick}>DarkMode</div>;
+  return <div onClick={onClick}>Dark Mode</div>;
 };
 
 export default DarkMode;

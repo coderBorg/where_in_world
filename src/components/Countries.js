@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, Fragment } from 'react';
 import CountryItem from './CountryItem';
 import Search from './Search';
 import Filter from './Filter';
@@ -30,14 +30,15 @@ const Countries = () => {
 
   return (
     <div>
-      <Search />
-      <Filter />
-      <DarkMode />
+      <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px 100px'}}>
+        <Search />
+        <Filter />
+      </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }} className={cssClass}>
         {filteredCountries.map((country) => (
           <CountryItem country={country} darkMode={darkMode} />
         ))}
-      </div>
+        </div>
     </div>
   );
 };

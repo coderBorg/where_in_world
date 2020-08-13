@@ -35,8 +35,6 @@ const Search = () => {
 
   return (
     <div>
-      <p>para</p>
-      <p>Search text: {searchText}</p>
       <form>
         <input
           type="text"
