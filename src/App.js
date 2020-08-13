@@ -12,7 +12,7 @@ function App() {
   return (
     <CountriesState>
       <Router>
-        <div className="App" style={{margin: '20px 50px'}}>
+        <div className="App" >
           <TitleBar />
           <Switch>
             <Route exact path="/" component={Countries} />
