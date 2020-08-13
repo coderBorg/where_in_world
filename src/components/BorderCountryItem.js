@@ -4,19 +4,14 @@ import CountriesContext from '../context/countries/countriesContext';
 
 export const BorderCountryItem = ({ name }) => {
   const countriesContext = useContext(CountriesContext);
-  const { getCountryDetail } = countriesContext;
+  const { darkMode, getCountryDetail } = countriesContext;
+
+  let cssClass = darkMode ? 'dark btn-dark' : 'light btn-light';
 
   return (
     <Link to={`/CountryDetail/${name}`} style={{ textDecoration: 'none' }}>
       <div
-        style={{
-          borderStyle: 'solid',
-          borderColor: 'blue',
-          borderWidth: 'medium',
-          width: '100px',
-          margin: '5px',
-          borderRadius: '5px',
-        }}
+        className={cssClass}
       >
         <p>{name}</p>
       </div>

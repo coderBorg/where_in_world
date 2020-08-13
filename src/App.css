@@ -38,11 +38,29 @@
 }
 
 .dark {
-  color: white;
-  background-color: gray;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(207, 26%, 17%);
 }
 
 .light {
-  color: black;
-  background-color: white;
+  color: hsl(200, 15%, 8%);
+  background-color: hsl(0, 0%, 98%);
+}
+
+.btn-dark {
+  border-style: solid;
+  border-color: black;
+  border-width: medium;
+  width: 100px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.btn-light {
+  border-style: solid;
+  border-color: gray;
+  border-width: medium;
+  width: 100px;
+  margin: 5px;
+  border-radius: 5px;
 }
