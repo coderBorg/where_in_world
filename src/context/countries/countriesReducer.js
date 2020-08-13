@@ -6,6 +6,7 @@ import {
   UPDATE_FILTER_VALUE,
   UPDATE_FILTERED_COUNTRIES,
   SET_DARK_MODE,
+  GET_COUNTRY_DETAIL_CURRENCIES,
 } from '../types';
 
 export default (state, action) => {
@@ -44,6 +45,11 @@ export default (state, action) => {
       return {
         ...state,
         darkMode: action.payload,
+      };
+    case GET_COUNTRY_DETAIL_CURRENCIES:
+      return {
+        ...state,
+        countryDetailCurrencies: action.payload,
       };
   }
 };

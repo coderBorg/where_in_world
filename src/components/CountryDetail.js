@@ -11,6 +11,7 @@ export const CountryDetail = ({ match }) => {
     darkMode,
     countryDetail,
     countryDetailBorders,
+    countryDetailCurrencies,
     getCountryDetail,
   } = countriesContext;
 
@@ -21,15 +22,33 @@ export const CountryDetail = ({ match }) => {
 
   let cssClass = darkMode ? 'dark' : 'light';
 
+  const {
+    name,
+    nativeName,
+    population,
+    region,
+    subregion,
+    topLevelDomain,
+    currencies
+  } = countryDetail;
+
   return (
     <div className={cssClass}>
-      <p>Country detail here</p>
-      <Link to={'/'}>Back</Link>
-      <p>{match.params.name}</p>
-      <p>Native Name: {countryDetail.nativeName}</p>
-      <p>Population: {countryDetail.population}</p>
+      <div>
+        <Link to={'/'}>Back</Link>
+      </div>
+      <img src={countryDetail.flag} alt="" style={{ width: '100px' }} />
+
+      <p>{name}</p>
+      <p>Native Name: {nativeName}</p>
+      <p>Population: {population}</p>
+      <p>Region: {region}</p>
+      <p>Sub Region: {subregion}</p>
+      <p>Top Level Domain: {topLevelDomain}</p>
       <p>Currencies:</p>
-      <p>Borders:</p>
+      { countryDetailCurrencies.map((cur) => (<p>{cur}</p>)
+      )}
+      <p>Border Countries:</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
         {countryDetailBorders.map((name) => (
           <BorderCountryItem name={name} />

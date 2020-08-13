@@ -6,6 +6,7 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
+  GET_COUNTRY_DETAIL_CURRENCIES,
   UPDATE_SEARCH_TEXT,
   UPDATE_FILTER_VALUE,
   UPDATE_FILTERED_COUNTRIES,
@@ -21,6 +22,7 @@ const CountriesState = (props) => {
     ],
     countryDetail: {},
     countryDetailBorders: [],
+    countryDetailCurrencies: [],
     searchText: '',
     filterValue: '',
     filteredCountries: [],
@@ -62,6 +64,18 @@ const CountriesState = (props) => {
       type: GET_COUNTRY_DETAIL_BORDERS,
       payload: borderNames,
     });
+
+    let currencyNames = [];
+    for (const obj of res.data[0].currencies) {
+      currencyNames.push(obj.name);
+    }
+
+    dispatch({
+      type: GET_COUNTRY_DETAIL_CURRENCIES,
+      payload: currencyNames,
+    });
+    
+
   };
 
   const getCountryNameFrCode = async (code) => {
@@ -160,6 +174,7 @@ const CountriesState = (props) => {
         countries: state.countries,
         countryDetail: state.countryDetail,
         countryDetailBorders: state.countryDetailBorders,
+        countryDetailCurrencies: state.countryDetailCurrencies,
         searchText: state.searchText,
         filterValue: state.filterValue,
         filteredCountries: state.filteredCountries,
