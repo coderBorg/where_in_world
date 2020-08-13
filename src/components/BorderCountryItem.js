@@ -10,8 +10,9 @@ export const BorderCountryItem = ({ name }) => {
     <Link to={`/CountryDetail/${name}`} style={{ textDecoration: 'none' }}>
       <div
         style={{
-          color: 'red',
-          backgroundColor: 'cyan',
+          borderStyle: 'solid',
+          borderColor: 'blue',
+          borderWidth: 'medium',
           width: '100px',
           margin: '5px',
           borderRadius: '5px',
