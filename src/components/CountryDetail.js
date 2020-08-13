@@ -12,6 +12,7 @@ export const CountryDetail = ({ match }) => {
     countryDetail,
     countryDetailBorders,
     countryDetailCurrencies,
+    countryDetailLanguages,
     getCountryDetail,
   } = countriesContext;
 
@@ -28,8 +29,9 @@ export const CountryDetail = ({ match }) => {
     population,
     region,
     subregion,
+    capital,
     topLevelDomain,
-    currencies
+    currencies,
   } = countryDetail;
 
   return (
@@ -44,10 +46,16 @@ export const CountryDetail = ({ match }) => {
       <p>Population: {population}</p>
       <p>Region: {region}</p>
       <p>Sub Region: {subregion}</p>
+      <p>Capital: {capital}</p>
       <p>Top Level Domain: {topLevelDomain}</p>
       <p>Currencies:</p>
-      { countryDetailCurrencies.map((cur) => (<p>{cur}</p>)
-      )}
+      {countryDetailCurrencies.map((cur) => (
+        <p>{cur}</p>
+      ))}
+      <p>Languages</p>
+      {countryDetailLanguages.map((cur) => (
+        <p>{cur}</p>
+      ))}
       <p>Border Countries:</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
         {countryDetailBorders.map((name) => (

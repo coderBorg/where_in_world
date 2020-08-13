@@ -7,6 +7,7 @@ import {
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
   GET_COUNTRY_DETAIL_CURRENCIES,
+  GET_COUNTRY_DETAIL_LANGUAGES,
   UPDATE_SEARCH_TEXT,
   UPDATE_FILTER_VALUE,
   UPDATE_FILTERED_COUNTRIES,
@@ -23,6 +24,7 @@ const CountriesState = (props) => {
     countryDetail: {},
     countryDetailBorders: [],
     countryDetailCurrencies: [],
+    countryDetailLanguages: [],
     searchText: '',
     filterValue: '',
     filteredCountries: [],
@@ -73,6 +75,16 @@ const CountriesState = (props) => {
     dispatch({
       type: GET_COUNTRY_DETAIL_CURRENCIES,
       payload: currencyNames,
+    });
+
+    let languageNames = [];
+    for (const obj of res.data[0].languages) {
+      languageNames.push(obj.name);
+    }
+
+    dispatch({
+      type: GET_COUNTRY_DETAIL_LANGUAGES,
+      payload: languageNames,
     });
     
 
@@ -175,6 +187,7 @@ const CountriesState = (props) => {
         countryDetail: state.countryDetail,
         countryDetailBorders: state.countryDetailBorders,
         countryDetailCurrencies: state.countryDetailCurrencies,
+        countryDetailLanguages: state.countryDetailLanguages,
         searchText: state.searchText,
         filterValue: state.filterValue,
         filteredCountries: state.filteredCountries,

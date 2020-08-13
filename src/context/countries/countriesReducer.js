@@ -2,6 +2,7 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_DETAIL,
   GET_COUNTRY_DETAIL_BORDERS,
+  GET_COUNTRY_DETAIL_LANGUAGES,
   UPDATE_SEARCH_TEXT,
   UPDATE_FILTER_VALUE,
   UPDATE_FILTERED_COUNTRIES,
@@ -51,5 +52,10 @@ export default (state, action) => {
         ...state,
         countryDetailCurrencies: action.payload,
       };
+      case GET_COUNTRY_DETAIL_LANGUAGES:
+        return {
+          ...state,
+          countryDetailLanguages: action.payload,
+        };
   }
 };
