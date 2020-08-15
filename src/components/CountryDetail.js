@@ -51,7 +51,7 @@ export const CountryDetail = ({ match }) => {
             flexDirection: 'column',
             justifyContent: 'flex-start',
             textAlign: 'justify',
-            margin: '20px 20px',
+            margin: '0px 20px',
           }}
         >
           <div
@@ -60,7 +60,7 @@ export const CountryDetail = ({ match }) => {
               flexDirection: 'row',
               justifyContent: 'flex-start',
               textAlign: 'justify',
-              margin: '20px 20px',
+              margin: '0px 20px',
             }}
           >
             <div
@@ -69,24 +69,26 @@ export const CountryDetail = ({ match }) => {
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
                 textAlign: 'justify',
-                margin: '20px 20px',
+                margin: '0px 20px',
               }}
             >
               <p style={{ fontWeight: 'bold' }}>{name}</p>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                textAlign: 'justify',
-                margin: '20px 20px',
-              }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-start',
+                  textAlign: 'justify',
+                  margin: '0px 0px',
+                }}
+              >
                 <div
                   style={{
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-start',
                     textAlign: 'justify',
-                    margin: '20px 20px',
+                    margin: '0px 0px',
                   }}
                 >
                   <p>Native Name: {nativeName}</p>
@@ -101,29 +103,15 @@ export const CountryDetail = ({ match }) => {
                     flexDirection: 'column',
                     justifyContent: 'flex-start',
                     textAlign: 'justify',
-                    margin: '20px 20px',
+                    margin: '0px 40px',
                   }}
                 >
                   <p>Top Level Domain: {topLevelDomain}</p>
-                  <p>Currencies:</p>
-                  {countryDetailCurrencies.map((cur) => (
-                    <p>{cur}</p>
-                  ))}
-                  <p>Languages:</p>
-                  {countryDetailLanguages.map((cur) => (
-                    <p>{cur}</p>
-                  ))}
+                  <p>Currencies: {countryDetailCurrencies.join(', ')}</p>
+                  <p>Languages: {countryDetailLanguages.join(', ')}</p>
                 </div>
               </div>
               <div>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  flexDirection: 'row',
-                }}
-              >
-                <p>Border Countries:</p>
                 <div
                   style={{
                     display: 'flex',
@@ -131,15 +119,21 @@ export const CountryDetail = ({ match }) => {
                     flexDirection: 'row',
                   }}
                 >
-                  {countryDetailBorders.map((name) => (
-                    <BorderCountryItem name={name} />
-                  ))}
+                  <p>Border Countries:</p>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      flexDirection: 'row',
+                    }}
+                  >
+                    {countryDetailBorders.map((name) => (
+                      <BorderCountryItem name={name} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
-
-            
           </div>
         </div>
       </div>
