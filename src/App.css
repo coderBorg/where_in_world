@@ -74,3 +74,7 @@
 .ctry-detail-fld-name {
   font-weight: bold;
 }
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
