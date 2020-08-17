@@ -13,7 +13,7 @@ export const BorderCountryItem = ({ name }) => {
       <div
         className={cssClass}
       >
-        <p>{name}</p>
+        <p style={{ textAlign: 'center' }}>{name}</p>
       </div>
     </Link>
   );

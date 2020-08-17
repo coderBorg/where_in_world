@@ -43,7 +43,7 @@ export const CountryDetail = ({ match }) => {
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div>
-          <img src={countryDetail.flag} alt="" style={{ width: '400px' }} />
+          <img src={countryDetail.flag} alt="" style={{ height: '300px' }} />
         </div>
         <div
           style={{
@@ -67,9 +67,10 @@ export const CountryDetail = ({ match }) => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-start',
+                justifyContent: 'space-around',
                 textAlign: 'justify',
                 margin: '0px 20px',
+                height: '300px',
               }}
             >
               <p style={{ fontWeight: 'bold' }}>{name}</p>
@@ -91,11 +92,11 @@ export const CountryDetail = ({ match }) => {
                     margin: '0px 0px',
                   }}
                 >
-                  <p>Native Name: {nativeName}</p>
-                  <p>Population: {population}</p>
-                  <p>Region: {region}</p>
-                  <p>Sub Region: {subregion}</p>
-                  <p>Capital: {capital}</p>
+                  <p><span className='ctry-detail-fld-name'>Native Name:</span> {nativeName}</p>
+                  <p><span className='ctry-detail-fld-name'>Population:</span> {population}</p>
+                  <p><span className='ctry-detail-fld-name'>Region:</span> {region}</p>
+                  <p><span className='ctry-detail-fld-name'>Sub Region:</span> {subregion}</p>
+                  <p><span className='ctry-detail-fld-name'>Capital:</span> {capital}</p>
                 </div>
                 <div
                   style={{
@@ -106,9 +107,9 @@ export const CountryDetail = ({ match }) => {
                     margin: '0px 40px',
                   }}
                 >
-                  <p>Top Level Domain: {topLevelDomain}</p>
-                  <p>Currencies: {countryDetailCurrencies.join(', ')}</p>
-                  <p>Languages: {countryDetailLanguages.join(', ')}</p>
+                  <p><span className='ctry-detail-fld-name'>Top Level Domain:</span> {topLevelDomain}</p>
+                  <p><span className='ctry-detail-fld-name'>Currencies:</span> {countryDetailCurrencies.join(', ')}</p>
+                  <p><span className='ctry-detail-fld-name'>Languages:</span> {countryDetailLanguages.join(', ')}</p>
                 </div>
               </div>
               <div>
