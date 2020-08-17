@@ -9,30 +9,32 @@ export const CountryItem = ({
   // let cssClass = darkMode ? 'dark' : 'light';
 
   return (
-    <div style={{ width: '230px', height: '300px', textAlign: 'justify' }}>
-      <img src={flag} alt="" style={{ width: '200px' }} />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          textAlign: 'justify',
-          margin: '0px 0px',
-        }}
-      >
-        <p style={{ fontWeight: 'bold' }}>{name}</p>
-        <p>
-          <span className="ctry-detail-fld-name">Population:</span> {population}
-        </p>
-        <p>
-          <span className="ctry-detail-fld-name">Region:</span> {region}
-        </p>
-        <p>
-          <span className="ctry-detail-fld-name">Capital:</span> {capital}
-        </p>
+    <Link to={`/CountryDetail/${name}`} style={{ textDecoration: 'none' }}>
+      <div style={{ width: '230px', height: '300px', textAlign: 'justify' }}>
+        <img src={flag} alt="" style={{ width: '200px' }} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            textAlign: 'justify',
+            margin: '0px 0px',
+          }}
+        >
+          <p style={{ fontWeight: 'bold' }}>{name}</p>
+          <p>
+            <span className="ctry-detail-fld-name">Population:</span>{' '}
+            {population}
+          </p>
+          <p>
+            <span className="ctry-detail-fld-name">Region:</span> {region}
+          </p>
+          <p>
+            <span className="ctry-detail-fld-name">Capital:</span> {capital}
+          </p>
+        </div>
       </div>
-      <Link to={`/CountryDetail/${name}`}>More</Link>
-    </div>
+    </Link>
   );
 };
 

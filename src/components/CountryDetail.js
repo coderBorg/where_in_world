@@ -36,11 +36,11 @@ export const CountryDetail = ({ match }) => {
 
   return (
     <div>
-      <div className={cssBtnClass}>
-        <Link to={'/'} style={{ textDecoration: 'none' }}>
-          Back
-        </Link>
-      </div>
+      <Link to={'/'} style={{ textDecoration: 'none' }}>
+        <div className={cssBtnClass}>
+          <p>Back</p>
+        </div>
+      </Link>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div>
           <img src={countryDetail.flag} alt="" style={{ height: '300px' }} />
@@ -92,11 +92,26 @@ export const CountryDetail = ({ match }) => {
                     margin: '0px 0px',
                   }}
                 >
-                  <p><span className='ctry-detail-fld-name'>Native Name:</span> {nativeName}</p>
-                  <p><span className='ctry-detail-fld-name'>Population:</span> {population}</p>
-                  <p><span className='ctry-detail-fld-name'>Region:</span> {region}</p>
-                  <p><span className='ctry-detail-fld-name'>Sub Region:</span> {subregion}</p>
-                  <p><span className='ctry-detail-fld-name'>Capital:</span> {capital}</p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Native Name:</span>{' '}
+                    {nativeName}
+                  </p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Population:</span>{' '}
+                    {population}
+                  </p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Region:</span>{' '}
+                    {region}
+                  </p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Sub Region:</span>{' '}
+                    {subregion}
+                  </p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Capital:</span>{' '}
+                    {capital}
+                  </p>
                 </div>
                 <div
                   style={{
@@ -107,9 +122,20 @@ export const CountryDetail = ({ match }) => {
                     margin: '0px 40px',
                   }}
                 >
-                  <p><span className='ctry-detail-fld-name'>Top Level Domain:</span> {topLevelDomain}</p>
-                  <p><span className='ctry-detail-fld-name'>Currencies:</span> {countryDetailCurrencies.join(', ')}</p>
-                  <p><span className='ctry-detail-fld-name'>Languages:</span> {countryDetailLanguages.join(', ')}</p>
+                  <p>
+                    <span className="ctry-detail-fld-name">
+                      Top Level Domain:
+                    </span>{' '}
+                    {topLevelDomain}
+                  </p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Currencies:</span>{' '}
+                    {countryDetailCurrencies.join(', ')}
+                  </p>
+                  <p>
+                    <span className="ctry-detail-fld-name">Languages:</span>{' '}
+                    {countryDetailLanguages.join(', ')}
+                  </p>
                 </div>
               </div>
               <div>
