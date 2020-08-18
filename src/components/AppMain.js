@@ -12,7 +12,7 @@ const AppMain = () => {
 
   const { darkMode } = countriesContext;
 
-  let cssClass = darkMode ? 'dark' : 'light';
+  let cssClass = darkMode ? 'dark-bg' : 'light-bg';
 
   return (
     <div className={cssClass}>

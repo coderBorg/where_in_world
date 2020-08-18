@@ -6,19 +6,22 @@ export const CountryItem = ({
   country: { name, capital, population, flag, region },
   darkMode,
 }) => {
-  // let cssClass = darkMode ? 'dark' : 'light';
+  let cssClass = darkMode ? 'dark' : 'light';
 
   return (
     <Link to={`/CountryDetail/${name}`} style={{ textDecoration: 'none' }}>
       <div style={{ width: '230px', height: '300px', textAlign: 'justify' }}>
-        <img src={flag} alt="" style={{ width: '200px' }} />
+        <img src={flag} alt="" style={{ width: '200px' }} className={cssClass} />
         <div
+          className={cssClass}
           style={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
             textAlign: 'justify',
             margin: '0px 0px',
+            padding: '0px 10px',
+            width: '200px',
           }}
         >
           <p style={{ fontWeight: 'bold' }}>{name}</p>
