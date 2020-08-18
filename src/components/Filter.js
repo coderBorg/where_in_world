@@ -2,13 +2,17 @@ import React, { useReducer, useContext } from 'react';
 import CountriesContext from '../context/countries/countriesContext';
 import CountriesReducer from '../context/countries/countriesReducer';
 
-
 const Filter = () => {
   const [state, dispatch] = useReducer(CountriesReducer);
 
   const countriesContext = useContext(CountriesContext);
 
-  const { countries, updateFilterValue, updateFilteredCountries } = countriesContext;
+  const {
+    countries,
+    darkMode,
+    updateFilterValue,
+    updateFilteredCountries,
+  } = countriesContext;
 
   const onChange = (e) => {
     console.log(e.target.value);
@@ -16,9 +20,11 @@ const Filter = () => {
     updateFilteredCountries(countries, e.target.value);
   };
 
+  let cssClass = darkMode ? 'dark' : 'light';
+
   return (
-    <div>
-      <select name="region" id="" onChange={onChange}>
+    <div className={cssClass}>
+      <select className={cssClass} name="region" id="" onChange={onChange}>
         <option value=""></option>
         <option value="africa">Africa</option>
         <option value="americas">Americas</option>

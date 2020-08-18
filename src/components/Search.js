@@ -13,6 +13,7 @@ const Search = () => {
     searchText,
     filterValue,
     updateSearchText,
+    darkMode,
     updateFilteredCountries,
     searchAndFilter,
   } = countriesContext;
@@ -33,10 +34,13 @@ const Search = () => {
     searchAndFilter(searchText, filterValue);
   };
 
+  let cssClass = darkMode ? 'dark' : 'light';
+
   return (
-    <div>
+    <div className={cssClass}>
       <form>
         <input
+          className={cssClass}
           type="text"
           name="searchText"
           placeholder="Search for a country..."
