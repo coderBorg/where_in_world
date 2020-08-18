@@ -28,12 +28,12 @@ const Countries = () => {
 
 
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px 100px'}}>
+    <div className='topLvlPdg'>
+      <div style={{ display: 'flex', justifyContent: 'space-between'}}>
         <Search />
         <Filter />
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent:"space-around", marginTop:'20px' }}>
         {filteredCountries.map((country) => (
           <CountryItem country={country} darkMode={darkMode} />
         ))}

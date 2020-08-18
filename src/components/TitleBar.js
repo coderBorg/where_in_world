@@ -15,9 +15,8 @@ const TitleBar = () => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          padding: '20px 50px'
         }}
-        className={cssClass}
+        className={cssClass + ' topLvlPdg'} 
       >
         <div>Where in the world?</div>
         <DarkMode />

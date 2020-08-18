@@ -35,7 +35,7 @@ export const CountryDetail = ({ match }) => {
   let cssBtnClass = darkMode ? 'dark btn-dark' : 'light btn-light';
 
   return (
-    <div>
+    <div className='topLvlPdg'>
       <Link to={'/'} style={{ textDecoration: 'none' }}>
         <div className={cssBtnClass}>
           <p>Back</p>
