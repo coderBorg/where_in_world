@@ -58,7 +58,8 @@
 }
 
 .light-bg {
-  background-color: hsl(0, 0%, 98%);
+  /* background-color: hsl(0, 0%, 98%); */
+  background-color: hsl(0, 0%, 90%);
 }
 
 .btn-dark {

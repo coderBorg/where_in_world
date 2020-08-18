@@ -33,7 +33,7 @@ const Countries = () => {
         <Search />
         <Filter />
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent:"space-around", marginTop:'20px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent:"space-between", marginTop:'20px' }}>
         {filteredCountries.map((country) => (
           <CountryItem country={country} darkMode={darkMode} />
         ))}

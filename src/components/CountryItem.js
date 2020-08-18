@@ -10,7 +10,7 @@ export const CountryItem = ({
 
   return (
     <Link to={`/CountryDetail/${name}`} style={{ textDecoration: 'none' }}>
-      <div style={{ width: '230px', height: '300px', textAlign: 'justify' }}>
+      <div style={{ width: '205px', height: '300px', textAlign: 'justify' }}>
         <img src={flag} alt="" style={{ width: '200px' }} className={cssClass} />
         <div
           className={cssClass}
