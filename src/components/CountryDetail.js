@@ -25,14 +25,7 @@ export const CountryDetail = ({ match }) => {
   }, [countryDetail]);
 
   const {
-    name,
-    nativeName,
-    population,
-    region,
-    subregion,
-    capital,
-    topLevelDomain,
-    currencies,
+    name: countryName,
   } = countryDetail;
 
   let cssBtnClass = darkMode ? 'dark btn-dark' : 'light btn-light';
@@ -67,7 +60,7 @@ export const CountryDetail = ({ match }) => {
               height: '300px',
             }}
           >
-            <p style={{ fontWeight: 'bold' }}>{name}</p>
+            <p style={{ fontWeight: 'bold' }}>{countryName}</p>
             <div
               style={{
                 display: 'flex',
