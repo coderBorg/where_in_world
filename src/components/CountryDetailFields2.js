@@ -6,23 +6,13 @@ const CountryDetailFields2 = () => {
   const countriesContext = useContext(CountriesContext);
 
   const {
-    darkMode,
     countryDetail,
-    countryDetailBorders,
     countryDetailCurrencies,
     countryDetailLanguages,
-    getCountryDetail,
   } = countriesContext;
 
   const {
-    name,
-    nativeName,
-    population,
-    region,
-    subregion,
-    capital,
     topLevelDomain,
-    currencies,
   } = countryDetail;
 
   return (
