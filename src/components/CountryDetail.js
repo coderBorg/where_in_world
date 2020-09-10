@@ -13,9 +13,6 @@ export const CountryDetail = ({ match }) => {
   const {
     darkMode,
     countryDetail,
-    countryDetailBorders,
-    countryDetailCurrencies,
-    countryDetailLanguages,
     getCountryDetail,
   } = countriesContext;
 
