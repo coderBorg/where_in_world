@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import CountriesContext from '../context/countries/countriesContext';
 import BorderCountryItem from './BorderCountryItem';
+import CountryDetailFields1 from './CountryDetailFields1';
 
 export const CountryDetail = ({ match }) => {
   const countriesContext = useContext(CountriesContext);
@@ -85,36 +86,7 @@ export const CountryDetail = ({ match }) => {
                     margin: '0px 0px',
                   }}
                 >
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'flex-start',
-                      textAlign: 'justify',
-                      margin: '0px 0px',
-                    }}
-                  >
-                    <p>
-                      <span className="ctry-detail-fld-name">Native Name:</span>{' '}
-                      {nativeName}
-                    </p>
-                    <p>
-                      <span className="ctry-detail-fld-name">Population:</span>{' '}
-                      {population}
-                    </p>
-                    <p>
-                      <span className="ctry-detail-fld-name">Region:</span>{' '}
-                      {region}
-                    </p>
-                    <p>
-                      <span className="ctry-detail-fld-name">Sub Region:</span>{' '}
-                      {subregion}
-                    </p>
-                    <p>
-                      <span className="ctry-detail-fld-name">Capital:</span>{' '}
-                      {capital}
-                    </p>
-                  </div>
+                  <CountryDetailFields1/>
                   <div
                     style={{
                       display: 'flex',
