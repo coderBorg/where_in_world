@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import CountriesContext from '../context/countries/countriesContext';
 import BorderCountryItem from './BorderCountryItem';
 import CountryDetailFields1 from './CountryDetailFields1';
+import CountryDetailFields2 from './CountryDetailFields2';
 
 export const CountryDetail = ({ match }) => {
   const countriesContext = useContext(CountriesContext);
@@ -43,8 +44,14 @@ export const CountryDetail = ({ match }) => {
           <p>Back</p>
         </div>
       </Link>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap'}}>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-around',
+        }}
+      >
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div>
             <img src={countryDetail.flag} alt="" style={{ height: '300px' }} />
           </div>
@@ -86,31 +93,8 @@ export const CountryDetail = ({ match }) => {
                     margin: '0px 0px',
                   }}
                 >
-                  <CountryDetailFields1/>
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'flex-start',
-                      textAlign: 'justify',
-                      margin: '0px 40px',
-                    }}
-                  >
-                    <p>
-                      <span className="ctry-detail-fld-name">
-                        Top Level Domain:
-                      </span>{' '}
-                      {topLevelDomain}
-                    </p>
-                    <p>
-                      <span className="ctry-detail-fld-name">Currencies:</span>{' '}
-                      {countryDetailCurrencies.join(', ')}
-                    </p>
-                    <p>
-                      <span className="ctry-detail-fld-name">Languages:</span>{' '}
-                      {countryDetailLanguages.join(', ')}
-                    </p>
-                  </div>
+                  <CountryDetailFields1 />
+                  <CountryDetailFields2 />
                 </div>
                 <div>
                   <div
