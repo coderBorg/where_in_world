@@ -55,68 +55,49 @@ export const CountryDetail = ({ match }) => {
           <div>
             <img src={countryDetail.flag} alt="" style={{ height: '300px' }} />
           </div>
+
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'flex-start',
+              justifyContent: 'space-around',
               textAlign: 'justify',
-              margin: '0px 20px',
+              margin: '0px 60px',
+              height: '300px',
             }}
           >
+            <p style={{ fontWeight: 'bold' }}>{name}</p>
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'flex-start',
                 textAlign: 'justify',
-                margin: '0px 20px',
+                margin: '0px 0px',
               }}
             >
+              <CountryDetailFields1 />
+              <CountryDetailFields2 />
+            </div>
+            <div>
               <div
                 style={{
                   display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-around',
-                  textAlign: 'justify',
-                  margin: '0px 20px',
-                  height: '300px',
+                  flexWrap: 'wrap',
+                  flexDirection: 'row',
                 }}
               >
-                <p style={{ fontWeight: 'bold' }}>{name}</p>
+                <p className="ctry-detail-fld-name">Border Countries:</p>
                 <div
                   style={{
                     display: 'flex',
+                    flexWrap: 'wrap',
                     flexDirection: 'row',
-                    justifyContent: 'flex-start',
-                    textAlign: 'justify',
-                    margin: '0px 0px',
                   }}
                 >
-                  <CountryDetailFields1 />
-                  <CountryDetailFields2 />
-                </div>
-                <div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      flexDirection: 'row',
-                    }}
-                  >
-                    <p className="ctry-detail-fld-name">Border Countries:</p>
-                    <div
-                      style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        flexDirection: 'row',
-                      }}
-                    >
-                      {countryDetailBorders.map((name) => (
-                        <BorderCountryItem name={name} />
-                      ))}
-                    </div>
-                  </div>
+                  {countryDetailBorders.map((name) => (
+                    <BorderCountryItem name={name} />
+                  ))}
                 </div>
               </div>
             </div>
