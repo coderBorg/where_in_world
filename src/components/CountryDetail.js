@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import CountriesContext from '../context/countries/countriesContext';
-import BorderCountryItem from './BorderCountryItem';
+
 import CountryDetailFields1 from './CountryDetailFields1';
 import CountryDetailFields2 from './CountryDetailFields2';
+import CountryDetailBorders from './CountryDetailBorders';
 
 export const CountryDetail = ({ match }) => {
   const countriesContext = useContext(CountriesContext);
@@ -79,28 +80,7 @@ export const CountryDetail = ({ match }) => {
               <CountryDetailFields1 />
               <CountryDetailFields2 />
             </div>
-            <div>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  flexDirection: 'row',
-                }}
-              >
-                <p className="ctry-detail-fld-name">Border Countries:</p>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    flexDirection: 'row',
-                  }}
-                >
-                  {countryDetailBorders.map((name) => (
-                    <BorderCountryItem name={name} />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <CountryDetailBorders />
           </div>
         </div>
       </div>
