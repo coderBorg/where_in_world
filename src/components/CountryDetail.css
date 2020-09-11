@@ -1,0 +1,22 @@
+.flex_row_overall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+.flex_row_dtl_fields {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: justify;
+        margin: 0px 0px;
+}
+
+.flex_col_dtl_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: justify;
+    margin: 0px 60px;
+    height: 300px;
+  }
