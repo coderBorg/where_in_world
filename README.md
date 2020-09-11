@@ -1,4 +1,4 @@
-# This "Where in the World" displays country data from the REST countries API.
+# This "Where in the World" app displays country data from the REST countries API.
 
 ## Technologies
 React app with useContext hook
