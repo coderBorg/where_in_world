@@ -6,27 +6,24 @@ import CountriesContext from '../context/countries/countriesContext';
 const CountryDetailBorders = () => {
   const countriesContext = useContext(CountriesContext);
 
-  const {
-    countryDetail,
-    countryDetailBorders,
-  } = countriesContext;
+  const { countryDetail, countryDetailBorders } = countriesContext;
+
+  const flexRowOverall = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  };
+
+  const flexRowBorders = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-      }}
-    >
+    <div style={flexRowOverall}>
       <p className="ctry-detail-fld-name">Border Countries:</p>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          flexDirection: 'row',
-        }}
-      >
+      <div style={flexRowBorders}>
         {countryDetailBorders.map((name) => (
           <BorderCountryItem name={name} />
         ))}
