@@ -16,10 +16,7 @@ const Countries = () => {
   } = countriesContext;
 
   useEffect(() => {
-    // getAllCountries();
-    // updateFilteredCountries(countries, filterValue);
     searchAndFilter(searchText, filterValue);
-    // eslint-disable-next-line
   }, []);
 
   const flexCountryItems = {

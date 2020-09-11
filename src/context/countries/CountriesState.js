@@ -33,16 +33,6 @@ const CountriesState = (props) => {
 
   const [state, dispatch] = useReducer(CountriesReducer, initialState);
 
-  // Get all countries
-  const getAllCountries = async () => {
-    const res = await axios.get('https://restcountries.eu/rest/v2/all');
-
-    dispatch({
-      type: GET_COUNTRIES,
-      payload: res.data,
-    });
-  };
-
   // Get country detail
   const getCountryDetail = async (name) => {
     const res = await axios.get(
@@ -103,22 +93,8 @@ const CountriesState = (props) => {
       payload: text,
     });
 
-    // const res = await axios.get(
-    //   `https://restcountries.eu/rest/v2/name/${text}`
-    // );
-
-    // dispatch({
-    //   type: GET_COUNTRIES,
-    //   payload: res.data,
-    // });
-
-    // console.log(`len of data from API: ${res.data.length}`)
-
     console.log('in updateSearchText');
     console.log(`searchtext: ${text}`);
-    // console.log("filter value:");
-    // console.log(state.filterValue);
-    // updateFilteredCountries(state.filterValue);
   };
 
   const searchAndFilter = async (searchText, filterValue) => {
@@ -193,7 +169,6 @@ const CountriesState = (props) => {
         filteredCountries: state.filteredCountries,
         darkMode: state.darkMode,
         searchAndFilter,
-        getAllCountries,
         getCountryDetail,
         updateSearchText,
         updateFilterValue,
