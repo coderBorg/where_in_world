@@ -27,7 +27,7 @@ const Countries = () => {
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     marginTop: '20px',
-  }
+  };
 
   return (
     <div className="topLvlPdg">
@@ -35,9 +35,7 @@ const Countries = () => {
         <Search />
         <Filter />
       </div>
-      <div
-        style={flexCountryItems}
-      >
+      <div style={flexCountryItems}>
         {filteredCountries.map((country) => (
           <CountryItem country={country} darkMode={darkMode} />
         ))}
