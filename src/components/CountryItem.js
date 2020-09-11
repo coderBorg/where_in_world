@@ -15,20 +15,21 @@ export const CountryItem = ({
     textAlign: 'justify',
     margin: '0px 0px',
     padding: '0px 10px',
-    width: '200px',
+    width: '267px',
+    height: '176px'
   };
 
   return (
     <Link to={`/CountryDetail/${countryName}`} style={{ textDecoration: 'none' }}>
-      <div style={{ width: '205px', height: '300px', textAlign: 'justify' }}>
+      <div style={{ width: '267px', height: '336px', textAlign: 'justify', margin: '20px 0px' }}>
         <img
           src={flag}
           alt=""
-          style={{ width: '200px' }}
+          style={{  width: '267px', height: '160px' }}
           className={cssClass}
         />
         <div className={cssClass} style={flexColFields}>
-          <p style={{ fontWeight: 'bold' }}>{countryName}</p>
+          <p style={{ fontWeight: 'bold', margin: '20px 0px' }}>{countryName}</p>
           <p>
             <span className="ctry-detail-fld-name">Population:</span>{' '}
             {population}
