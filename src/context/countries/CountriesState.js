@@ -39,9 +39,6 @@ const CountriesState = (props) => {
       `https://restcountries.eu/rest/v2/name/${name}`
     );
 
-    console.log('country detail data:');
-    console.log(res.data);
-
     dispatch({
       type: GET_COUNTRY_DETAIL,
       payload: res.data[0],
@@ -93,8 +90,6 @@ const CountriesState = (props) => {
       payload: text,
     });
 
-    console.log('in updateSearchText');
-    console.log(`searchtext: ${text}`);
   };
 
   const searchAndFilter = async (searchText, filterValue) => {
@@ -123,11 +118,7 @@ const CountriesState = (props) => {
   };
 
   const updateFilteredCountries = (countries, filtVal) => {
-    console.log('in updateFilteredCountries');
-    console.log('val:');
-    console.log(filtVal);
     if (filtVal === '') {
-      console.log('in branch where filtval is empty string');
       dispatch({
         type: UPDATE_FILTERED_COUNTRIES,
         payload: countries,
@@ -135,8 +126,6 @@ const CountriesState = (props) => {
     } else {
       let filtCountries = [];
       for (const country of countries) {
-        // console.log(country.name);
-        // console.log(country.region);
         if (filtVal.toUpperCase() === country.region.toUpperCase()) {
           filtCountries.push(country);
         }

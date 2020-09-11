@@ -3,28 +3,32 @@ import { Link } from 'react-router-dom';
 import CountriesContext from '../context/countries/countriesContext';
 
 export const CountryItem = ({
-  country: { name, capital, population, flag, region },
+  country: { name: countryName, capital, population, flag, region },
   darkMode,
 }) => {
   let cssClass = darkMode ? 'dark' : 'light';
 
+  const flexColFields = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    textAlign: 'justify',
+    margin: '0px 0px',
+    padding: '0px 10px',
+    width: '200px',
+  };
+
   return (
-    <Link to={`/CountryDetail/${name}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/CountryDetail/${countryName}`} style={{ textDecoration: 'none' }}>
       <div style={{ width: '205px', height: '300px', textAlign: 'justify' }}>
-        <img src={flag} alt="" style={{ width: '200px' }} className={cssClass} />
-        <div
+        <img
+          src={flag}
+          alt=""
+          style={{ width: '200px' }}
           className={cssClass}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            textAlign: 'justify',
-            margin: '0px 0px',
-            padding: '0px 10px',
-            width: '200px',
-          }}
-        >
-          <p style={{ fontWeight: 'bold' }}>{name}</p>
+        />
+        <div className={cssClass} style={flexColFields}>
+          <p style={{ fontWeight: 'bold' }}>{countryName}</p>
           <p>
             <span className="ctry-detail-fld-name">Population:</span>{' '}
             {population}

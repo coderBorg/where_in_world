@@ -14,23 +14,12 @@ const Search = () => {
     filterValue,
     updateSearchText,
     darkMode,
-    updateFilteredCountries,
     searchAndFilter,
   } = countriesContext;
 
   const onChange = async (e) => {
     let searchText = e.target.value;
-    console.log(
-      `in onChange for search, len of countries: ${countries.length}`
-    );
-    console.log(`search text: ${searchText}`);
     await updateSearchText(searchText);
-    console.log(`search text: ${searchText}`);
-    console.log(
-      `in onChange for search, len of countries after updateSearchText: ${countries.length}`
-    );
-
-    // await updateFilteredCountries(countries, filterValue);
     searchAndFilter(searchText, filterValue);
   };
 
