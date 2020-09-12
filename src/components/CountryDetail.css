@@ -12,6 +12,13 @@
         margin: 0px 0px;
 }
 
+@media (max-width: 500px) {
+    .phone {
+        flex-direction: column;    
+    }
+}
+
+
 .flex_col_dtl_info {
     display: flex;
     flex-direction: column;

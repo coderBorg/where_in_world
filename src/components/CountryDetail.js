@@ -38,7 +38,7 @@ export const CountryDetail = ({ match }) => {
           </div>
           <div className="flex_col_dtl_info">
             <p style={{ fontWeight: 'bold' }}>{countryName}</p>
-            <div className="flex_row_dtl_fields">
+            <div className="flex_row_dtl_fields phone">
               <CountryDetailFields1 />
               <CountryDetailFields2 />
             </div>
