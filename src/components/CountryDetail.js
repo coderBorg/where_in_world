@@ -25,18 +25,18 @@ export const CountryDetail = ({ match }) => {
   let cssDarkModeClass = darkMode ? 'dark' : 'light';
 
   return (
-    <div className={'topLvlPdg' + ' ' + cssDarkModeClass}>
+    <div className={'topLvlPdg phone' + ' ' + cssDarkModeClass}>
       <Link to={'/'} style={{ textDecoration: 'none' }}>
         <div className={cssBtnClass}>
           <p>Back</p>
         </div>
       </Link>
       <div className="flex_row_overall">
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }} className="phone">
           <div>
-            <img src={countryDetail.flag} alt="" style={{ height: '300px' }} />
+            <img src={countryDetail.flag} alt="" id="flag" />
           </div>
-          <div className="flex_col_dtl_info">
+          <div className="flex_col_dtl_info phone">
             <p style={{ fontWeight: 'bold' }}>{countryName}</p>
             <div className="flex_row_dtl_fields phone">
               <CountryDetailFields1 />

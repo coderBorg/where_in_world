@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 
 import CountriesContext from '../context/countries/countriesContext';
 
+import './CountryDetailFields2.css';
+
 const CountryDetailFields2 = () => {
   const countriesContext = useContext(CountriesContext);
 
@@ -11,20 +13,10 @@ const CountryDetailFields2 = () => {
     countryDetailLanguages,
   } = countriesContext;
 
-  const {
-    topLevelDomain,
-  } = countryDetail;
+  const { topLevelDomain } = countryDetail;
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        textAlign: 'justify',
-        margin: '0px 40px',
-      }}
-    >
+    <div className="flex_col phone">
       <p>
         <span className="ctry-detail-fld-name">Top Level Domain:</span>{' '}
         {topLevelDomain}

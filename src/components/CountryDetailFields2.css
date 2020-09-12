@@ -1,0 +1,13 @@
+.flex_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: justify;
+    margin: 0px 40px;
+}
+
+@media (max-width: 500px) {
+    .phone {
+        margin: 10px 0px;    
+    }
+}

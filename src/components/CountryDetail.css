@@ -12,11 +12,12 @@
         margin: 0px 0px;
 }
 
-@media (max-width: 500px) {
-    .phone {
-        flex-direction: column;    
-    }
+#flag {
+    height: 300px;
 }
+
+
+
 
 
 .flex_col_dtl_info {
@@ -27,3 +28,22 @@
     margin: 0px 60px;
     height: 300px;
   }
+
+  @media (max-width: 500px) {
+    .phone {
+        flex-direction: column;    
+    }
+
+    .phone .flex_col_dtl_info {
+        margin: 0px 10px;    
+    }
+
+    .topLvlPdg.phone  {
+        padding: 5px 3px;    
+    }
+
+    #flag {
+        height: 150px;
+        padding: 0px 0px 5px 0px;
+    }
+}
