@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import CountriesContext from '../context/countries/countriesContext';
 
 export const CountryItem = ({
   country: { name: countryName, capital, population, flag, region },

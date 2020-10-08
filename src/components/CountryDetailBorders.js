@@ -6,7 +6,7 @@ import CountriesContext from '../context/countries/countriesContext';
 const CountryDetailBorders = () => {
   const countriesContext = useContext(CountriesContext);
 
-  const { countryDetail, countryDetailBorders } = countriesContext;
+  const { countryDetailBorders } = countriesContext;
 
   const flexRowOverall = {
     display: 'flex',

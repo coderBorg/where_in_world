@@ -1,15 +1,13 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useContext } from 'react';
 import CountriesContext from '../context/countries/countriesContext';
-import CountriesReducer from '../context/countries/countriesReducer';
-import { UPDATE_SEARCH_TEXT } from '../context/types';
+// import CountriesReducer from '../context/countries/countriesReducer';
 
 const Search = () => {
-  const [state, dispatch] = useReducer(CountriesReducer);
+  // const [state, dispatch] = useReducer(CountriesReducer);
 
   const countriesContext = useContext(CountriesContext);
 
   const {
-    countries,
     searchText,
     filterValue,
     updateSearchText,

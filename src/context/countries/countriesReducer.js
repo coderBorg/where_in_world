@@ -57,5 +57,7 @@ export default (state, action) => {
           ...state,
           countryDetailLanguages: action.payload,
         };
+        default:
+          return state;
   }
 };

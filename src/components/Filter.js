@@ -1,9 +1,7 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useContext } from 'react';
 import CountriesContext from '../context/countries/countriesContext';
-import CountriesReducer from '../context/countries/countriesReducer';
 
 const Filter = () => {
-  const [state, dispatch] = useReducer(CountriesReducer);
 
   const countriesContext = useContext(CountriesContext);
 

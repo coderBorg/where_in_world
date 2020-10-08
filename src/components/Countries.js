@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, Fragment } from 'react';
+import React, { useContext, useEffect } from 'react';
 import CountryItem from './CountryItem';
 import Search from './Search';
 import Filter from './Filter';
@@ -17,6 +17,7 @@ const Countries = () => {
 
   useEffect(() => {
     searchAndFilter(searchText, filterValue);
+    // eslint-disable-next-line
   }, []);
 
   const flexCountryItems = {

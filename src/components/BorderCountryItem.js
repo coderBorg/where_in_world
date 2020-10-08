@@ -4,7 +4,7 @@ import CountriesContext from '../context/countries/countriesContext';
 
 export const BorderCountryItem = ({ name }) => {
   const countriesContext = useContext(CountriesContext);
-  const { darkMode, getCountryDetail } = countriesContext;
+  const { darkMode } = countriesContext;
 
   let cssClass = darkMode ? 'dark btn-dark' : 'light btn-light';
 
